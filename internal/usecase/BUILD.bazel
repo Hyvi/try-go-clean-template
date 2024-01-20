@@ -1,0 +1,26 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "usecase",
+    srcs = [
+        "interfaces.go",
+        "translation.go",
+    ],
+    importpath = "github.com/Hyvi/go-present/try-go-clean-template/internal/usecase",
+    visibility = ["//try-go-clean-template:__subpackages__"],
+    deps = ["//try-go-clean-template/internal/entity"],
+)
+
+go_test(
+    name = "usecase_test",
+    srcs = [
+        "mocks_test.go",
+        "translation_test.go",
+    ],
+    deps = [
+        ":usecase",
+        "//try-go-clean-template/internal/entity",
+        "@com_github_golang_mock//gomock:go_default_library",
+        "@com_github_stretchr_testify//require:go_default_library",
+    ],
+)

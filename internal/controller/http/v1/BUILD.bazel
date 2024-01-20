@@ -1,0 +1,22 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "http",
+    srcs = [
+        "error.go",
+        "router.go",
+        "translation.go",
+    ],
+    importpath = "github.com/Hyvi/go-present/try-go-clean-template/internal/controller/http/v1",
+    visibility = ["//try-go-clean-template:__subpackages__"],
+    deps = [
+        "//try-go-clean-template/docs",
+        "//try-go-clean-template/internal/entity",
+        "//try-go-clean-template/internal/usecase",
+        "//try-go-clean-template/pkg/logger",
+        "@com_github_gin_gonic_gin//:go_default_library",
+        "@com_github_prometheus_client_golang//prometheus/promhttp:go_default_library",
+        "@com_github_swaggo_files//:go_default_library",
+        "@com_github_swaggo_gin_swagger//:go_default_library",
+    ],
+)

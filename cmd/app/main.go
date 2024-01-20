@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"github.com/evrone/go-clean-template/config"
-	"github.com/evrone/go-clean-template/internal/app"
+	"github.com/Hyvi/go-present/try-go-clean-template/config"
+	"github.com/Hyvi/go-present/try-go-clean-template/internal/app"
 )
 
 func main() {

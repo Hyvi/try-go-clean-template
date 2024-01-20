@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "app",
+    srcs = ["app.go"],
+    importpath = "github.com/Hyvi/go-present/try-go-clean-template/internal/app",
+    visibility = ["//try-go-clean-template:__subpackages__"],
+    deps = [
+        "//try-go-clean-template/config",
+        "//try-go-clean-template/internal/controller/amqp_rpc",
+        "//try-go-clean-template/internal/controller/http/v1:http",
+        "//try-go-clean-template/internal/usecase",
+        "//try-go-clean-template/internal/usecase/repo",
+        "//try-go-clean-template/internal/usecase/webapi",
+        "//try-go-clean-template/pkg/httpserver",
+        "//try-go-clean-template/pkg/logger",
+        "//try-go-clean-template/pkg/postgres",
+        "//try-go-clean-template/pkg/rabbitmq/rmq_rpc/server",
+        "@com_github_gin_gonic_gin//:go_default_library",
+    ],
+)

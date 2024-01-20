@@ -1,0 +1,10 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_test")
+
+go_test(
+    name = "integration-test_test",
+    srcs = ["integration_test.go"],
+    deps = [
+        "//try-go-clean-template/pkg/rabbitmq/rmq_rpc/client",
+        "@com_github_eun_go_hit//:go_default_library",
+    ],
+)

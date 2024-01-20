@@ -1,0 +1,11 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "httpserver",
+    srcs = [
+        "options.go",
+        "server.go",
+    ],
+    importpath = "github.com/Hyvi/go-present/try-go-clean-template/pkg/httpserver",
+    visibility = ["//visibility:public"],
+)
