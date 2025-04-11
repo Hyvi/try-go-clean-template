@@ -1,0 +1,9 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "repo",
+    srcs = ["contracts.go"],
+    importpath = "github.com/evrone/go-clean-template/internal/repo",
+    visibility = ["//try-go-clean-template:__subpackages__"],
+    deps = ["//try-go-clean-template/internal/entity"],
+)

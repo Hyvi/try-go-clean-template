@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "httpserver",
+    srcs = [
+        "options.go",
+        "server.go",
+    ],
+    importpath = "github.com/evrone/go-clean-template/pkg/httpserver",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_goccy_go_json//:go-json",
+        "@com_github_gofiber_fiber_v2//:fiber",
+    ],
+)

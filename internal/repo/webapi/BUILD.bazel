@@ -1,0 +1,12 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "webapi",
+    srcs = ["translation_google.go"],
+    importpath = "github.com/evrone/go-clean-template/internal/repo/webapi",
+    visibility = ["//try-go-clean-template:__subpackages__"],
+    deps = [
+        "//try-go-clean-template/internal/entity",
+        "@com_github_conight_go_googletrans//:go-googletrans",
+    ],
+)

@@ -1,0 +1,12 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "rmq_rpc",
+    srcs = [
+        "connection.go",
+        "errors.go",
+    ],
+    importpath = "github.com/evrone/go-clean-template/pkg/rabbitmq/rmq_rpc",
+    visibility = ["//visibility:public"],
+    deps = ["@com_github_rabbitmq_amqp091_go//:amqp091-go"],
+)

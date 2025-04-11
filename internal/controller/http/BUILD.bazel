@@ -1,0 +1,19 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "http",
+    srcs = ["router.go"],
+    importpath = "github.com/evrone/go-clean-template/internal/controller/http",
+    visibility = ["//try-go-clean-template:__subpackages__"],
+    deps = [
+        "//try-go-clean-template/config",
+        "//try-go-clean-template/docs",
+        "//try-go-clean-template/internal/controller/http/middleware",
+        "//try-go-clean-template/internal/controller/http/v1:http",
+        "//try-go-clean-template/internal/usecase",
+        "//try-go-clean-template/pkg/logger",
+        "@com_github_ansrivas_fiberprometheus_v2//:fiberprometheus",
+        "@com_github_gofiber_fiber_v2//:fiber",
+        "@com_github_gofiber_swagger//:swagger",
+    ],
+)

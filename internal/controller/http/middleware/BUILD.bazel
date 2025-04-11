@@ -1,0 +1,16 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "middleware",
+    srcs = [
+        "logger.go",
+        "recovery.go",
+    ],
+    importpath = "github.com/evrone/go-clean-template/internal/controller/http/middleware",
+    visibility = ["//try-go-clean-template:__subpackages__"],
+    deps = [
+        "//try-go-clean-template/pkg/logger",
+        "@com_github_gofiber_fiber_v2//:fiber",
+        "@com_github_gofiber_fiber_v2//middleware/recover",
+    ],
+)

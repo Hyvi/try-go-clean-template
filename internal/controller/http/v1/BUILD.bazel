@@ -1,0 +1,18 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "http",
+    srcs = [
+        "error.go",
+        "translation.go",
+    ],
+    importpath = "github.com/evrone/go-clean-template/internal/controller/http/v1",
+    visibility = ["//try-go-clean-template:__subpackages__"],
+    deps = [
+        "//try-go-clean-template/internal/entity",
+        "//try-go-clean-template/internal/usecase",
+        "//try-go-clean-template/pkg/logger",
+        "@com_github_go_playground_validator_v10//:validator",
+        "@com_github_gofiber_fiber_v2//:fiber",
+    ],
+)

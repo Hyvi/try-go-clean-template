@@ -1,0 +1,12 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "persistent",
+    srcs = ["translation_postgres.go"],
+    importpath = "github.com/evrone/go-clean-template/internal/repo/persistent",
+    visibility = ["//try-go-clean-template:__subpackages__"],
+    deps = [
+        "//try-go-clean-template/internal/entity",
+        "//try-go-clean-template/pkg/postgres",
+    ],
+)

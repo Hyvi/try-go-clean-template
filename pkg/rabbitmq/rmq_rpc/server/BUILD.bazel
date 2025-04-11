@@ -1,0 +1,17 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "server",
+    srcs = [
+        "options.go",
+        "server.go",
+    ],
+    importpath = "github.com/evrone/go-clean-template/pkg/rabbitmq/rmq_rpc/server",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//try-go-clean-template/pkg/logger",
+        "//try-go-clean-template/pkg/rabbitmq/rmq_rpc",
+        "@com_github_goccy_go_json//:go-json",
+        "@com_github_rabbitmq_amqp091_go//:amqp091-go",
+    ],
+)
