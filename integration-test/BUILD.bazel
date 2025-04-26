@@ -3,6 +3,7 @@ load("@rules_go//go:def.bzl", "go_test")
 go_test(
     name = "integration-test_test",
     srcs = ["integration_test.go"],
+    tags = ["intergration"],  # 添加标签
     deps = [
         "//try-go-clean-template/pkg/rabbitmq/rmq_rpc/client",
         "@com_github_goccy_go_json//:go-json",
